@@ -62,6 +62,7 @@ lib: directories
 
 #Link
 executable: $(OBJECTS)
+		make directories
 		$(CC) -o $(TARGETDIR)/$(TARGET)  $^ $(LIB)
 
 #Compile
@@ -75,4 +76,4 @@ $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
 	@rm -f $(BUILDDIR)/$*.$(DEPEXT).tmp
 
 #Non-File Targets
-.PHONY: all remake clean cleaner resources run lib executable
+.PHONY: all remake clean cleaner resources run lib executable directories
